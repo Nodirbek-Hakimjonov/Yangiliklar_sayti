@@ -1,0 +1,22 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %}
+Texnalogiya xabarlari
+{% endblock %}
+
+{% block content %}
+
+        {% for texnalogiya in texnalogiya_yangiliklari %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <a href="{{ texnalogiya.get_absolute_url }}">
+                            <img src="{{ texnalogiya.image.url }}" alt="{{ texnalogiya.title }}" style="width: 50%"></a>
+                        <a href="{{ texnalogiya.get_absolute_url }}"> <h2>{{ texnalogiya.title|truncatewords:5 }}</h2></a>
+
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+{% endblock %}

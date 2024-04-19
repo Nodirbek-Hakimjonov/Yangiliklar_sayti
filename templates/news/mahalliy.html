@@ -1,0 +1,25 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %}
+Mahalliy xabarlari
+{% endblock %}
+
+{% block content %}
+
+        {% for mahalliy in mahalliy_yangiliklari %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <a href="{{ mahalliy.get_absolute_url }}">
+                            <img src="{{ mahalliy.image.url }}" alt="{{ mahalliy.title }}" style="width: 50%"></a>
+                        <a href="{{ mahalliy.get_absolute_url }}"> <h2>{{ mahalliy.title|truncatewords:5 }}</h2></a>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+
+
+
+{% endblock %}
