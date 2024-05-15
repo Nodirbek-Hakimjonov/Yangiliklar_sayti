@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 pillow = "*"
+django-hitcount = "*"
+celery = "*"
 
 [dev-packages]
 

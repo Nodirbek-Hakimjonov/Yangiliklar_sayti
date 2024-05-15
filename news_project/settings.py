@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'news_app',
+    'accaunts',
+    'hitcount',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +139,59 @@ MEDIA_ROOT=BASE_DIR / 'media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL='home_page'
+EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+
+LOGIN_URL='login'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'nodirbekhakimjonovsvm@gmail.com'
+EMAIL_HOST_PASSWORD ="cpuv pscn nqwc qdsx"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+DEFAULT_FROM_EMAIL='nodirbekhakimjonovsvm@gmail.com'
+
+
+
+
+# import smtplib
+#
+# smtp_server = 'smtp.gmail.com'
+# smtp_port = 587
+# username = 'nodirbekhakimjonovsvm@gmail.com'
+# password = 'cpuv pscn nqwc qdsx'
+#
+# try:
+#     server = smtplib.SMTP(smtp_server, smtp_port)
+#     server.starttls()
+#     server.login(username, password)
+#     print("SMTP connection successful.")
+# except Exception as e:
+#     print("SMTP connection failed:", e)
+# finally:
+#     server.quit()
+#
+#
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'level': 'DEBUG',
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+#     'loggers': {
+#         'django.mail': {
+#             'handlers': ['console'],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#         },
+#     },
+# }
+

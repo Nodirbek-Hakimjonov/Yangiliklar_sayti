@@ -1,0 +1,20 @@
+{% extends 'news/base.html' %}
+{% load static %}
+{% block title %}
+Category sahifa
+{% endblock %}
+{% block content %}
+
+    <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="category">
+        <ul>
+            {% for category in categories %}
+                <li class="cat-item">
+                    <a href="{% url 'category_detail' category.slug %}">{{ category.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

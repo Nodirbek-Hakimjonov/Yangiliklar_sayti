@@ -5,7 +5,7 @@
     <title>News List</title>
 </head>
 <body>
-{% for news in news_list %}
+{% for news in news_list1 %}
     <a href="{% url 'news_detail_page' news.id %}">
     <li>{{ news.title }}</li>
     </a>

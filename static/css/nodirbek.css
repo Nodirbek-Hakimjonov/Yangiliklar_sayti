@@ -1,0 +1,140 @@
+/*!* Reset some default browser styles *!*/
+/*body, h1, h2, h3, h4, h5, h6, p, ul, li {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*!* Basic styling *!*/
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    line-height: 1.6;*/
+/*}*/
+
+/*header {*/
+/*    background-color: #333;*/
+/*    color: #fff;*/
+/*    padding: 20px;*/
+/*    text-align: center;*/
+/*}*/
+
+/*header h1 {*/
+/*    font-size: 24px;*/
+/*}*/
+
+/*main {*/
+/*    padding: 20px;*/
+/*}*/
+
+/*.search-results {*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/*.search-results h2 {*/
+/*    font-size: 20px;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*.search-results ul {*/
+/*    list-style-type: none;*/
+/*}*/
+
+/*.search-results li {*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/*.search-results a {*/
+/*    color: #007bff;*/
+/*    text-decoration: none;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.search-results a:hover {*/
+/*    text-decoration: underline;*/
+/*}*/
+
+/*.search-results p {*/
+/*    color: #666;*/
+/*}*/
+
+
+
+
+
+
+/* Reset some default browser styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.containers {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 28px;
+    text-align: center;
+}
+
+main {
+    padding: 20px 0;
+}
+
+.search-results {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.search-results h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.search-results ul {
+    list-style-type: none;
+}
+
+.search-results li {
+    margin-bottom: 20px;
+}
+
+.search-results a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.search-results a:hover {
+    text-decoration: underline;
+}
+
+.search-results p {
+    color: #666;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+}

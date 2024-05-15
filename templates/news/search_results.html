@@ -1,0 +1,36 @@
+{% extends 'news/base.html' %}
+{% load static %}
+{% load hitcount_tags %}
+{% block title %}
+    Search Results
+{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nodirbek.css' %}">
+</head>
+
+{% block content %}
+
+
+    <main>
+        <section class="search-results">
+            <h2>Sizning qidiruvingiz natijalari:</h2><br>
+            <ul>
+                {% for yangilik in barcha_yangiliklar %}
+
+                    <li>
+                        <p><a href="{% url 'news_detail_page' yangilik.slug %}"><img src="{{ yangilik.image.url }}"
+                                                                                     width="30%"></a></p>
+                        <a href="{% url 'news_detail_page' yangilik.slug %}">{{ yangilik.title }}</a>
+                        <p><a style="color: #ac2925" href="{% url 'news_detail_page' yangilik.slug %}">{{ yangilik.body|truncatewords:20 }}</a>
+                        </p>
+                        <p>Ko'rishlar soni: <i class="fa fa-eye"></i> {% get_hit_count for yangilik %}</p><br>
+                    </li>
+                {% endfor %}
+                <!-- Add more result items here -->
+            </ul>
+        </section>
+    </main>
+{% endblock %}

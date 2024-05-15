@@ -1,0 +1,30 @@
+{% extends 'news/base.html' %}
+{% load static %}
+{% block title %}
+Logout sahifasi
+{% endblock title %}
+
+{% block content %}
+
+    <h2> LOG OUT </h2>
+    <p>Siz saytdan chiqyapsiz, <a style="color: #ac2925" href="{% url 'login' %}">Qaytadan kirish</a></p>
+    <p>Yangi accaunt ochmoqchimisiz? <a style="color: #ac2925" href="{% url 'user_register' %}">Ro'yxatdan o'tish</a></p>
+
+{% endblock content %}
+{#{% extends "news/base.html" %}#}
+{#{% load static %}#}
+{#{% block title %}Log Out{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#{% if user.is_authenticated %}#}
+{#    <h2>Salom {{ user.username }}! Siz saytdan chiqyapsiz!</h2>#}
+{#<form action="{% url 'logout' %}" method="post">#}
+{#  {% csrf_token %}#}
+{#  <h1 type="submit">Log Out</h1>#}
+{#  <p>saytga qaytish uchun: <a style="color: red"  href="{% url 'login' %}">Login</a></p>#}
+{#</form>#}
+{#{% else %}#}
+{#<p>You are not logged in</p>#}
+{#<a href="{% url 'login' %}">Log In</a>#}
+{#{% endif %}#}
+{#{% endblock %}#}

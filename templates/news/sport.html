@@ -1,22 +1,35 @@
 {% extends 'news/base.html' %}
 {% load static %}
-
+{% load hitcount_tags %}
 {% block title %}
 Sport xabarlari
 {% endblock %}
-
 {% block content %}
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+    <!-- Card container -->
+    <div class="card-container">
+        <!-- First Card -->
         {% for sport in sport_yangiliklari %}
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <a href="{{ sport.get_absolute_url }}">
-                        <img src="{{ sport.image.url }}" alt="#" style="width: 50%"></a>
-                        <a href="{{ sport.get_absolute_url }}"><h2>{{ sport.title|truncatewords:5 }}</h2></a>
+        <div class="card">
+            <!-- Image -->
+            <a href="{% url 'news_detail_page' sport.slug %}"><img src="{{ sport.image.url }}" alt="Card Image" class="card-image"></a>
 
-                    </div>
-                </div>
-            </div>
-    {% endfor %}
+            <!-- Title -->
+            <h2 class="card-title"><a href="{% url 'news_detail_page' sport.slug %}">{{ sport.title}}</a></h2>
+
+            <!-- Body -->
+            <p class="card-body"><a href="{% url 'news_detail_page' sport.slug %}">{{ sport.body|truncatewords:10 }}</a></p>
+            <!-- Hit count -->
+            <p>Ko'rishlar soni: <i class="fa fa-eye" ></i> {% get_hit_count for sport %}</p>
+
+        </div>
+
+  {% endfor %}
+
+    </div>
+
+
+
 {% endblock %}

@@ -1,24 +1,34 @@
 {% extends 'news/base.html' %}
 {% load static %}
-
+{% load hitcount_tags %}
 {% block title %}
 Mahalliy xabarlari
 {% endblock %}
-
 {% block content %}
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+    <!-- Card container -->
+    <div class="card-container">
+        <!-- First Card -->
         {% for mahalliy in mahalliy_yangiliklari %}
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <a href="{{ mahalliy.get_absolute_url }}">
-                            <img src="{{ mahalliy.image.url }}" alt="{{ mahalliy.title }}" style="width: 50%"></a>
-                        <a href="{{ mahalliy.get_absolute_url }}"> <h2>{{ mahalliy.title|truncatewords:5 }}</h2></a>
-                    </div>
-                </div>
-            </div>
+        <div class="card">
+            <!-- Image -->
+            <a href="{% url 'news_detail_page' mahalliy.slug %}"><img src="{{ mahalliy.image.url }}" alt="Card Image" class="card-image"></a>
 
-        {% endfor %}
+            <!-- Title -->
+            <h2 class="card-title"><a href="{% url 'news_detail_page' mahalliy.slug %}">{{ mahalliy.title}}</a></h2>
+
+            <!-- Body -->
+            <p class="card-body"><a href="{% url 'news_detail_page' mahalliy.slug %}">{{ mahalliy.body|truncatewords:10 }}</a></p>
+            <!-- Hit count -->
+            <p>Ko'rishlar soni: <i class="fa fa-eye" ></i> {% get_hit_count for mahalliy %}</p>
+
+        </div>
+
+  {% endfor %}
+
+    </div>
 
 
 

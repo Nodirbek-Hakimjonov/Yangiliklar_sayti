@@ -1,0 +1,5 @@
+Hello {{username|safe}}
+Salom email_meesage
+{{ first_name|safe }}
+
+Thank you
